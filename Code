@@ -1,0 +1,160 @@
+# Empty list
+a = []
+print(a)  # Output: []
+print(type(a))  # Output: <class 'list'>
+
+# List with languages and a number
+languages = ['R', 'Python', 'SAS', 'Scala', 42]
+print(len(languages))  # Output: 5
+
+# Loop through list
+for lang in languages:
+    print(lang)
+# Output:
+# R
+# Python
+# SAS
+# Scala
+# 42
+
+# Assign second item in list to temp
+temp = languages[1]
+print(temp)  # Output: Python
+print(type(temp))  # Output: <class 'str'>
+
+# Modify the languages list
+languages.append('Java')
+languages.remove(42)
+print(languages)  # Output: ['R', 'Python', 'SAS', 'Scala', 'Java']
+
+# List of colors, modifying it
+colors = ['Red', 'Blue', 'White']
+colors.append('Black')
+colors.insert(1, 'Orange')
+print(colors)  # Output: ['Red', 'Orange', 'Blue', 'White', 'Black']
+
+# Extending list with another list and sorting it
+colors2 = ['Grey', 'Sky Blue']
+colors.extend(colors2)
+print(len(colors), colors)  # Output: 7 ['Red', 'Orange', 'Blue', 'White', 'Black', 'Grey', 'Sky Blue']
+colors.sort()
+print(colors)  # Output: ['Black', 'Blue', 'Grey', 'Orange', 'Red', 'Sky Blue', 'White']
+
+# Split sentence into words
+sent = 'Coronavirus Caused Lockdowns Around The World.'
+words = sent.split()
+print(words)  # Output: ['Coronavirus', 'Caused', 'Lockdowns', 'Around', 'The', 'World.']
+
+# Convert all words to lowercase
+words_lower = [word.lower() for word in words]
+print(words_lower)  # Output: ['coronavirus', 'caused', 'lockdowns', 'around', 'the', 'world.']
+
+# Checking for word presence
+print('country' in words_lower)  # Output: False
+words_lower.remove('the')
+print(words_lower)  # Output: ['coronavirus', 'caused', 'lockdowns', 'around', 'world.']
+
+# Slice the list and join it into a string
+x4 = words_lower[:4]
+print(x4)  # Output: ['coronavirus', 'caused', 'lockdowns', 'around']
+sentence = ' '.join(x4)
+print(sentence)  # Output: coronavirus caused lockdowns around
+
+# List of student grades
+stud_grades = ['A', 'A', 'B', 'C', 'C', 'F']
+print(len(stud_grades))  # Output: 6
+
+# Converting list to set
+stud_grades_set = set(stud_grades)
+print(stud_grades_set)  # Output: {'A', 'B', 'C', 'F'}
+print(type(stud_grades))  # Output: <class 'list'>
+print(type(stud_grades_set))  # Output: <class 'set'>
+
+# Adding and removing items in the set
+stud_grades_set.add('G')
+stud_grades_set.add('F')
+print(stud_grades_set)  # Output: {'A', 'B', 'C', 'F', 'G'}
+stud_grades_set.remove('F')
+print(stud_grades_set)  # Output: {'A', 'B', 'C', 'G'}
+print(len(stud_grades_set))  # Output: 4
+
+# Set operations
+colors = ['red', 'blue', 'orange']
+fruits = ['orange', 'grapes', 'apples']
+colors_set = set(colors)
+fruits_set = set(fruits)
+print(colors_set.union(fruits_set))  # Output: {'orange', 'apples', 'red', 'blue', 'grapes'}
+print(colors_set.intersection(fruits_set))  # Output: {'orange'}
+print(fruits_set.difference(colors_set))  # Output: {'apples', 'grapes'}
+
+# Loop through a list with mixed data types
+temp = [17, 'Virat', 50.0]
+for item in temp:
+    print(item)
+# Output:
+# 17
+# Virat
+# 50.0
+
+# Modifying list and converting to tuple
+temp[0] = 11
+temp1 = tuple(temp)
+for item in temp1:
+    print(item)
+# Output:
+# 11
+# Virat
+# 50.0
+
+# Uncomment to see error (this line would raise an error)
+# temp1[0] = 17  # Will throw error
+
+# Tuple example
+city = ("Bangalore", 28.9949521, 72)
+print(city[0])  # Output: Bangalore
+
+# Nested tuple
+city2 = ('Chennai', 30.01, 74)
+cities = (city, city2)
+print(cities)  # Output: (('Bangalore', 28.9949521, 72), ('Chennai', 30.01, 74))
+print(type(cities[0]))  # Output: <class 'tuple'>
+print(type(cities))  # Output: <class 'tuple'>
+
+# Dictionary example
+d = {"actor": "amir", "animal": "cat", "earth": 2, "list": [23, 32, 12]}
+actor = d['actor']
+print(actor)  # Output: amir
+print(type(actor))  # Output: <class 'str'>
+
+List = d['list']
+print(List)  # Output: [23, 32, 12]
+print(type(List))  # Output: <class 'list'>
+
+# Merging dictionaries
+d1 = {'singer': 'Kr$na', 'album': 'Still here', 'genre': 'hip-hop'}
+d.update(d1)
+print(d)
+# Output: {'actor': 'amir', 'animal': 'cat', 'earth': 2, 'list': [23, 32, 12], 'singer': 'Kr$na', 'album': 'Still here', 'genre': 'hip-hop'}
+
+# Accessing dictionary keys and values
+print(d.keys())  # Output: dict_keys(['actor', 'animal', 'earth', 'list', 'singer', 'album', 'genre'])
+print(d.values())  # Output: dict_values(['amir', 'cat', 2, [23, 32, 12], 'Kr$na', 'Still here', 'hip-hop'])
+
+# Iterating over dictionary
+for key, value in d.items():
+    print(f"{key} ----> {value}")
+# Output:
+# actor ----> amir
+# animal ----> cat
+# earth ----> 2
+# list ----> [23, 32, 12]
+# singer ----> Kr$na
+# album ----> Still here
+# genre ----> hip-hop
+
+# Character count in sentence
+char_count = {}
+for char in sent:
+    char_count[char] = char_count.get(char, 0) + 1
+print(char_count)
+# Output: {'C': 1, 'o': 3, 'r': 2, 'n': 2, 'a': 2, 'v': 1, 'i': 1, 's': 1, ' ': 6, 'C': 1, 'a': 2, 'u': 1, 's': 1, 'e': 2, 'L': 1, 'k': 1, 'd': 1, 'o': 3, 'w': 1, 'n': 2, 's': 1, 'A': 1, 'r': 1, 'o': 3, 'u': 1, 't': 1, 'h': 1, 'e': 2, 'W': 1, 'r': 1, 'l': 1, 'd': 1, '.': 1}
